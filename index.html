@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laracasts learn vue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <style>
+        body {
+            padding-top: 40px;
+        }
+        h1 {
+            padding: 20px;
+            font-weight: bold;
+            font-size: larger;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root" class="container">
+
+            <h1>Using task-list tag in the html &lt;task-list&gt;&lt;task-list&gt; which was defined as a vue component with template with a v-for directive, and tasks in the data of it...episode 8</h1>
+
+            <task-list></task-list>
+    
+            <h1>Using message component with Bulma CSS framework (referenced CDN in link tag above)...episode 9</h1>        
+            
+            <my-message title="Hello Durham from my-message component  &lt;my-message&gt;&lt;my-message&gt; "
+                body="I have props of title and body! Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor">
+            </my-message>
+            <my-message title="Hello another my-message component passing in different title and body"
+                body="This is different text passed in. It shows, that the my-message component has props: ['title','body'] which it receives">
+            </my-message>
+            <my-message title="And this is a third title passed into a third use of my-message"
+                body="Here we have different body of text to be passed through to the component">
+            </my-message>
+    
+            <h1>Using modal component   &lt;my-modal&gt;&lt;my-modal&gt;   with Bulma CSS framework...episode 10</h1>   
+    
+            <my-modal v-show="showMyModal" @my-modal-close="showMyModal = false">
+                <p>Insert any text here because the template with the Vue component definition has &lt;slot&gt;&lt;slot&gt; tags .   </p>
+                <p>On clicking the cross we have an event emitted as it's defined in the template: @click="$emit('my-modal-close')"  </p>
+                <p>and this event @my-modal-close is defined in the mymodal tag so that when it happens, it sets showMyModal to false </p> 
+                <p>....see...the  @my-modal-close="showMyModal = false" </p>
+            </my-modal>
+            <button @click="showMyModal = true">Show my-modal...the vue component has v-show="showMyModal" with showMyModal initially set to false :-)</button>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
